@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faList, faPlus } from '@fortawesome/free-solid-svg-icons'
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'front_end';
+  listIcon = faList;
+  plusIcon = faPlus;
 }
