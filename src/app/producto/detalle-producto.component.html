@@ -1,1 +1,14 @@
-<p>detalle-producto works!</p>
+<div class="row mt-5 d-flex justify-content-center">
+    <div class="col-md-4 text-center">
+        <div class="card">
+            <div class="card-header">
+                {{producto.nombre}}
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{{producto.precio}}</li>
+            </ul>
+            <div class="btn btn-primary" routerLink="[/]">
+                <fa-icon [icon]="backIcon"></fa-icon> volver</div>
+        </div>
+    </div>
+</div>

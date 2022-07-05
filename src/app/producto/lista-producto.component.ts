@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductoService } from '../service/producto.service';
 
 //Bottons
-import { faEdit, faEye, faSearch, faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
 import { Producto } from '../models/producto';
 import { HotToastService } from '@ngneat/hot-toast';

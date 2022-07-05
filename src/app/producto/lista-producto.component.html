@@ -15,7 +15,7 @@
             <td>{{producto.nombre | uppercase}}</td>
             <td>${{producto.precio}}</td>
             <td>
-                <button class="btn btn-outline-primary">
+                <button class="btn btn-outline-primary" routerLink="detalle/{{producto.id}}">
                     <fa-icon [icon]="viewIcon"></fa-icon>
                 </button>
             </td>

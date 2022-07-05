@@ -1,11 +1,12 @@
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Producto } from '../models/producto';
+import { ProductoDto } from '../models/ProductoDto';
 
 const httpOptions = {
   headers: new HttpHeaders({
-    'Content-type':'application/json'
+    'Content-type': 'application/json'
   })
 }
 
@@ -35,8 +36,8 @@ export class ProductoService {
     return this.httpClient.post<any>(`${this.apiUrl}/create`, producto, httpOptions);
   }
 
-  update$(id: number, producto: Producto): Observable<any> {
-    return this.httpClient.put<any>(`${this.apiUrl}/update/${id}`, producto,httpOptions);
+  update$(id: number, productoDto: ProductoDto): Observable<any> {
+    return this.httpClient.put<any>(`${this.apiUrl}/update/${id}`, productoDto, httpOptions);
   }
 
   delete$(id: number): Observable<any> {

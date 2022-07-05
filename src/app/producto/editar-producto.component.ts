@@ -3,7 +3,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { NgbPaginationNumber } from '@ng-bootstrap/ng-bootstrap';
 import { HotToastModule, HotToastService } from '@ngneat/hot-toast';
-import { Producto } from '../models/producto';
+import { ProductoDto } from '../models/ProductoDto';
 import { ProductoService } from '../service/producto.service';
 
 @Component({
@@ -13,7 +13,7 @@ import { ProductoService } from '../service/producto.service';
 })
 export class EditarProductoComponent implements OnInit {
 
-  producto!: Producto;
+  producto!: ProductoDto;
   formProduct = this.formBuilder.group({
     nombre: ['', [Validators.required]],
     precio: ['', [Validators.required, Validators.min(0)]]
@@ -33,28 +33,27 @@ export class EditarProductoComponent implements OnInit {
       next: (producto) => {
         this.producto = producto;
         this.formProduct = this.formBuilder.group({
-          nombre: [ this.producto.nombre, [Validators.required]],
+          nombre: [this.producto.nombre, [Validators.required]],
           precio: [this.producto.precio, [Validators.required, Validators.min(0)]]
         });
       },
-          error: (err) => {
-            this.router.navigate(["/"]);
-            this.toast.error(err);
-          }
-      })
+      error: (err) => {
+        this.router.navigate(["/"]);
+        this.toast.error(err);
+      }
+    })
 
 
   }
 
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
-    const {nombre, precio}= this.producto;
-    let producto_dto = new Producto(nombre,precio);
-    this.productoService.update$(id, producto_dto).subscribe({
-      next: (data) => { 
-        console.log(`mensaje:${data.mensaje}`);
+    this.producto = this.formProduct.value;
+    this.productoService.update$(Number(id), this.producto).subscribe({
+      next: (data) => {
         this.router.navigate(['/']);
-        this.toast.success(data) },
+        this.toast.success(data.mensaje);
+      },
       error: (err) => this.toast.error(err.mensaje)
     }
     )
