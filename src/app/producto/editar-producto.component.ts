@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { NgbPaginationNumber } from '@ng-bootstrap/ng-bootstrap';
 import { HotToastModule, HotToastService } from '@ngneat/hot-toast';
-import { ProductoDto } from '../models/ProductoDto';
+import { ProductoDto } from '../models/producto.dto';
 import { ProductoService } from '../service/producto.service';
 
 @Component({
