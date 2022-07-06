@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Route, Router } from '@angular/router';
 import { NgbPaginationNumber } from '@ng-bootstrap/ng-bootstrap';
 import { HotToastModule, HotToastService } from '@ngneat/hot-toast';
@@ -14,7 +14,7 @@ import { ProductoService } from '../service/producto.service';
 export class EditarProductoComponent implements OnInit {
 
   producto!: ProductoDto;
-  formProduct = this.formBuilder.group({
+  formProduct: FormGroup = this.formBuilder.group({
     nombre: ['', [Validators.required]],
     precio: ['', [Validators.required, Validators.min(0)]]
   });

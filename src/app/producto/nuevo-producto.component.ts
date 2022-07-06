@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { Producto } from '../models/producto';
+import { Producto } from '../models/producto.model';
 import { ProductoService } from '../service/producto.service';
 
 @Component({

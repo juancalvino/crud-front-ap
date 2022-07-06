@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HotToastService } from '@ngneat/hot-toast';
-import { Producto } from '../models/producto';
+import { Producto } from '../models/producto.model';
 import { ProductoService } from '../service/producto.service';
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 

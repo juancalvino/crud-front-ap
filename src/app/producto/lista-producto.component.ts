@@ -4,7 +4,7 @@ import { ProductoService } from '../service/producto.service';
 //Bottons
 import { faEdit, faEye, faTrash } from '@fortawesome/free-solid-svg-icons';
 import { Observable } from 'rxjs';
-import { Producto } from '../models/producto';
+import { Producto } from '../models/producto.model';
 import { HotToastService } from '@ngneat/hot-toast';
 
 @Component({
